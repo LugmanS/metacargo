@@ -30,9 +30,9 @@ export default function Page() {
       placeholder: "Enter your container number",
     },
     bol: {
-      label: "Bill of Ladding",
+      label: "Bill of Lading",
       slug: "bol",
-      placeholder: "Enter your bill of ladding number",
+      placeholder: "Enter your bill of lading number",
     },
     awb: {
       label: "Air Cargo",
@@ -71,7 +71,6 @@ export default function Page() {
       )
     }
     setTrackingNumber(input.toUpperCase().trim())
-    setTrackingError(false)
   }
 
   return (
@@ -79,9 +78,9 @@ export default function Page() {
       <h1 className="text-6xl font-bold leading-[64px] text-center">
         Unified solution for all your <br /> shipment tracking needs.
       </h1>
-      <p className="text-xl text-center">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Quaerat,
-        aliquid! Lorem ipsum dolor sit amet.
+      <p className="text-lg text-center">
+        Track your shipments with the most convenient tool. <br /> Just enter
+        the tracking number, we take it forward.
       </p>
 
       <div className="w-full max-w-2xl flex flex-col items-start gap-3">
@@ -107,6 +106,7 @@ export default function Page() {
         <div className="flex items-center w-full gap-2">
           <Input
             type="text"
+            title={modeOfTrackingConfig[modeOfTracking].placeholder}
             maxLength={modeOfTracking === "awb" ? 12 : 10}
             autoFocus={true}
             placeholder={modeOfTrackingConfig[modeOfTracking].placeholder}
